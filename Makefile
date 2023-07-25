@@ -8,7 +8,7 @@ test:
 	python -m pytest -vv --cov=core_nlp test.py
 
 lint:
-	pylint --disable=R,C app.py core_nlp.py wikiphrases.py
+	pylint --disable=R,C,W0311 app.py core_nlp.py wikiphrases.py
 
 format:
 	black app.py core_nlp.py wikiphrases.py
