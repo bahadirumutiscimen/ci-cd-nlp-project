@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wikipedia Phrases Analyzer - Results</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Results for "{{ name }}"</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Phrases</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% set phrase_counts = {} %} {% for phrase in phrases %} {% set _ =
+        phrase_counts.update({phrase: phrase_counts.get(phrase, 0) + 1}) %} {%
+        endfor %} {% for phrase, count in
+        phrase_counts.items()|sort(attribute=1, reverse=true) %}
+        <tr>
+          <td>{{ phrase }}</td>
+          <td>{{ count }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
