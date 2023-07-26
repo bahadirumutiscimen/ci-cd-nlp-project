@@ -25,4 +25,4 @@ def analyze_wikipedia(request: Request, name: str = Form(...)):
         return templates.TemplateResponse("result.html", {"request": request, "name": name, "phrases": phrases})
 
 if __name__ == "__main__":
-     uvicorn.run(f"{Path(__file__).stem}:app", host="0.0.0.0", port=5000)
+     uvicorn.run(f"{Path(__file__).stem}:app", host="0.0.0.0", port=8000)
