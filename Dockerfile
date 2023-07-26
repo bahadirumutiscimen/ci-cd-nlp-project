@@ -10,9 +10,8 @@ COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 RUN python -m textblob.download_corpora
 
+EXPOSE 8000
 # Uygulama dosyalarını kopyalayın
 COPY . .
-
-EXPOSE 5000
 # Uygulamayı çalıştırın
 CMD ["python", "app.py"]
